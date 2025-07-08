@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kevin Camargo | Portfólio</title>
+  <style>
+    :root {
+      /* Paleta de cores personalizada para identidade visual */
+      --cor-primaria: #1e1e2f;
+      --cor-secundaria: #ff6b35;
+      --cor-destaque: #ffd166;
+      --cor-texto: #f1f1f1;
+      --cor-fundo: #121212;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth; /* Navegação suave para links internos */
+    }
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.7;
+    }
+
+    /* Cabeçalho fixo com navegação principal */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--cor-primaria);
+      border-bottom: 2px solid var(--cor-secundaria);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: var(--cor-destaque);
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--cor-texto);
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      /* Linha de destaque animada ao passar o mouse */
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--cor-secundaria);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Conteúdo principal centralizado */
+    main {
+      max-width: 1000px;
+      margin: 120px auto 0 auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--cor-destaque);
+    }
+
+    section p {
+      margin-bottom: 1rem;
+    }
+
+    /* Lista de educação com destaque lateral */
+    .educacao-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .educacao-item {
+      background: #1f1f2f;
+      border-left: 4px solid var(--cor-secundaria);
+      padding: 1rem 1.5rem;
+      border-radius: 5px;
+    }
+
+    .educacao-item h3 {
+      margin-bottom: 0.5rem;
+      color: var(--cor-destaque);
+    }
+
+    .educacao-item span {
+      background: var(--cor-secundaria);
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.8rem;
+    }
+
+    /* Grade responsiva para cards do portfólio */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .portfolio-card {
+      background: #1f1f2f;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .portfolio-card .content {
+      padding: 1rem;
+    }
+
+    .portfolio-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--cor-destaque);
+    }
+
+    .portfolio-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--cor-secundaria);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Formulário de contato básico com estilos consistentes */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    form input, form textarea {
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      background: #1f1f2f;
+      color: var(--cor-texto);
+    }
+
+    form button {
+      align-self: flex-start;
+      background: var(--cor-secundaria);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #e85d04;
+    }
+
+    /* Rodapé simples com cor de fundo consistente */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--cor-primaria);
+      margin-top: 4rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho fixo com logo e navegação -->
+  <header>
+    <h1>Kevin Camargo</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#educacao">Educação</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Seção Sobre -->
+    <section id="sobre">
+      <h2>Sobre Mim</h2>
+      <p>Sou Kevin Douglas de Almeida Camargo, desenvolvedor especializado em front-end. Crio interfaces que unem design funcional, performance e uma experiência fluida para o usuário. Trabalho com React, Vue e busco constantemente aprender novas tecnologias para entregar soluções modernas.</p>
+    </section>
+
+    <!-- Seção Educação -->
+    <section id="educacao">
+      <h2>Educação</h2>
+      <div class="educacao-lista">
+        <div class="educacao-item">
+          <h3>Análise e Desenvolvimento de Sistemas</h3>
+          <p>UNINTER Centro Universitário Internacional</p>
+          <span>2025 - 2027</span>
+        </div>
+        <div class="educacao-item">
+          <h3>Técnico em Informática</h3>
+          <p>ETEC Itapeva</p>
+          <span>2016 - 2018</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Portfólio -->
+    <section id="portfolio">
+      <h2>Portfólio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="\images\Projeto1.png" alt="Projeto Codepay">
+          <div class="content">
+            <h3>Codepay Dashboard</h3>
+            <p>Funcionalidades desenvolvidas para dashboard de pagamentos com foco em UX.</p>
+            <a href="https://pro.codepay.com.br/login" target="_blank">Ver Projeto</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="/images/Projeto2.png" alt="Getz Food">
+          <div class="content">
+            <h3>Getz Food Delivery</h3>
+            <p>Cardápio digital responsivo para pedidos em restaurantes e mercados.</p>
+            <a href="https://app.getzfood.com.br/home" target="_blank">Ver Projeto</a>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <img src="/images/Projeto3.png" alt="Parceiro Getz">
+          <div class="content">
+            <h3>Parceiro Getz</h3>
+            <p>Landing page para novos parceiros do Getz, construída com foco em conversão.</p>
+            <a href="http://parceiro.getzfood.com.br/#/" target="_blank">Ver Projeto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+      <h2>Contato</h2>
+      <form>
+        <input type="text" placeholder="Seu Nome" required>
+        <input type="email" placeholder="Seu Email" required>
+        <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Rodapé com direitos autorais -->
+  <footer>
+    <p>&copy; 2025 Kevin Camargo. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
